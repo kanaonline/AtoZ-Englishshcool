@@ -100,7 +100,11 @@ span {
   font-weight: bold;
   text-align: center;
 }
-
+@media screen and (max-width: 767px) {
+  .trial_subTitle {
+    font-size: 2.5rem;
+  }
+}
 /* -----------------------------
    ボタン
 ------------------------------ */
@@ -652,6 +656,9 @@ span {
   .feature {
     margin-top: 50px;
   }
+  .feature.container .section_title {
+    font-size: 2.4rem;
+  }
   .feature ul {
     flex-direction: column;
     align-items: center;
@@ -779,7 +786,7 @@ span {
   position: relative;
   height: 1600px;
   margin-top: 200px;
-  padding: 100px 20px;
+  padding: 100px 0;
 }
 
 .summary_slide {
@@ -972,9 +979,12 @@ span {
     padding-top: 0;
     height: 1720px;
   }
+  .summmary .section_title {
+    padding-top: 100px;
+  }
   .summary_card {
     display: block;
-    width: 100%;
+    width: 90%;
 
   }
   .summary_card_txt {
@@ -1167,12 +1177,6 @@ footer small {
     height: 50px;
   }
 }
-@media screen and (max-width: 767px) {
-  #pageTop {
-    bottom: 30px;
-    right: 30px;
-  }
-}
 
 /* ---------------------------
 
@@ -1255,6 +1259,25 @@ footer small {
     content: '\f078';
   }
 }
+@media screen and (max-width: 767px) {
+  .flow_lesson {
+    margin-top: 50px;
+  }
+  .flow_lesson .flow_lesson_list {
+    flex-direction: column;
+    padding:20px 0;
+    gap: 100px;
+  }
+  .flow_lesson .flow_lesson_card {
+    padding: 1rem 1rem 2rem;
+  }
+  .flow_lesson .flow_lesson_card::after {
+    top: 105%;
+    right: 50%;
+    transform: translateX(50%);
+    content: '\f078';
+  }
+}
 /* ---------------------------
 
    form
@@ -1264,11 +1287,12 @@ footer small {
   margin-top: 250px;
   font-size: 1.8rem;
 }
-
+.trial_subTitle_br {
+  display: none;
+}
 form table {
   margin: 50px auto;
 }
-
 form td {
   border: 1px solid var(--sub-color);
   padding: 30px;
@@ -1468,20 +1492,41 @@ form select {
   }
 }
 @media screen and (max-width: 767px) {
+  .form {
+    margin-top: 70px;
+    width: 100%;
+  }
+  .trial_subTitle_br {
+    display: block;
+  }
   form table {
-    max-width: 600px;
+    max-width: 250px;
     width: 100%;
   }
   form tr {
     display: flex;
     flex-direction: column;
   }
+  form input:not([type="radio"], [type="checkbox"],[type="reset"]),
+form select {
+ width: 100%;
+}
   form tr > td:first-of-type,
   form tr > td:nth-of-type(2) {
-    max-width: 600px;
+    max-width: 250px;
     width: 100%;
   }
   form textarea {
-    width: 250px;
+    width: 230px;
+  }
+  form .form_button {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .form_button button {
+    margin-right: 0;
+  }
+  #form_submit {
+    margin-bottom: 20px;
   }
 }
